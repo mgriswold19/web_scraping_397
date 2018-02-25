@@ -3,6 +3,7 @@ import sys
 import urllib.request
 import unicodedata
 import datetime
+import csv
 
 badcount = 0
 emails = []
@@ -11,7 +12,7 @@ emails = []
 
 
 #for i in range(33727):
-for i in range(500):
+for i in range(10):
 
 	ar_url = "https://wikileaks.org/clinton-emails/emailid/" + str(i)
 
@@ -34,6 +35,7 @@ for i in range(500):
 		# print(emailto)
 		# print(emaildate)
 print("writing")
-with open(wikileaksout.csv, 'wb') as myfile:
+print(emails)
+with open("wikileaksout.csv", 'w') as myfile:
     wr = csv.writer(myfile)
     wr.writerow(emails)
