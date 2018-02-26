@@ -52,18 +52,18 @@ df = df.drop('emaildate', 1)
 
 #getting the frequency 
 
-dfvalcount = df.loc["2010-06-24":"2010-06-27"].otherhuman.value_counts()
+dfvalcount = df.loc["2010-06-01":"2010-06-30"].otherhuman.value_counts()
 
-print("list:")
-print(emails)
-print("dataframe:")
+# print("list:")
+# print(emails)
+# print("dataframe:")
 print(df)
-print("value count:")
+# print("value count:")
 print(dfvalcount)
 
 
 #write to csv
-
+df.to_csv("wikileaksout.csv")
 dfvalcount.to_csv("wikivalout.csv")
 df.to_csv("bigout.csv")
 # with open("wikileaksout.csv", 'w') as myfile:

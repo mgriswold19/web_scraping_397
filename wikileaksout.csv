@@ -1,1 +1,10 @@
-"['Hillary Clinton', 'Philippe Reines', datetime.date(2010, 6, 30)]","['Hillary Clinton', 'Richard Verma', datetime.date(2010, 6, 17)]","['Hillary Clinton', 'Lauren Jiloty', datetime.date(2010, 6, 16)]","['Hillary Clinton', 'Cheryl Mills', datetime.date(2010, 6, 27)]","['Hillary Clinton', 'Jake Sullivan', datetime.date(2010, 6, 30)]","['Hillary Clinton', 'Sidney Blumenthal', datetime.date(2010, 6, 16)]","['Hillary Clinton', 'Cheryl Mills', datetime.date(2010, 6, 24)]","['Hillary Clinton', 'Jake Sullivan', datetime.date(2010, 7, 1)]","['Hillary Clinton', 'Jake Sullivan', datetime.date(2010, 6, 19)]"
+dateindex,otherhuman
+2010-06-30,Philippe Reines
+2010-06-17,Richard Verma
+2010-06-16,Lauren Jiloty
+2010-06-27,Cheryl Mills
+2010-06-30,Jake Sullivan
+2010-06-16,Sidney Blumenthal
+2010-06-24,Cheryl Mills
+2010-07-01,Jake Sullivan
+2010-06-19,Jake Sullivan
