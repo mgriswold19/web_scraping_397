@@ -5,6 +5,7 @@ import unicodedata
 import datetime
 import csv
 import pandas as pd
+import time
 
 badcount = 0
 emails = []
@@ -14,10 +15,10 @@ df = pd.DataFrame(columns=["emaildate","otherhuman"])
 
 
 #for i in range(33727):
-for i in range(10):
-
+for i in range(1000):
+	time.sleep(2)
 	ar_url = "https://wikileaks.org/clinton-emails/emailid/" + str(i)
-
+	print("querying " + ar_url)
 	with urllib.request.urlopen(ar_url) as url:
 		ar_html = url.read()
 		ar_soup = BeautifulSoup(ar_html, 'html.parser')
@@ -64,6 +65,7 @@ print(dfvalcount)
 #write to csv
 
 dfvalcount.to_csv("wikivalout.csv")
+df.to_csv("bigout.csv")
 # with open("wikileaksout.csv", 'w') as myfile:
 #     wr = csv.writer(myfile)
 #     wr.writerow(emails)
