@@ -15,11 +15,13 @@ df = pd.DataFrame(columns=["emaildate","otherhuman"])
 
 
 #for i in range(33727):
-for i in range(1000):
+for i in range(10000):
+	ii = i + 1000
 	time.sleep(2)
-	ar_url = "https://wikileaks.org/clinton-emails/emailid/" + str(i)
+	ar_url = "https://wikileaks.org/clinton-emails/emailid/" + str(ii)
 	print("querying " + ar_url)
-	with urllib.request.urlopen(ar_url) as url:
+	try:
+		url = urllib.request.urlopen(ar_url)
 		ar_html = url.read()
 		ar_soup = BeautifulSoup(ar_html, 'html.parser')
 		try:
@@ -38,6 +40,8 @@ for i in range(1000):
 			df.loc[len(df.index)] = [emaildate,human]
 		except:
 			badcount += 1
+	except urllib2.HTTPError:
+		print("HTTPError")
 		# print(header)
 		# print("from:")
 		# print(emailfrom)
@@ -63,8 +67,8 @@ print(dfvalcount)
 
 
 #write to csv
-df.to_csv("wikileaksout.csv")
-dfvalcount.to_csv("wikivalout.csv")
+df.to_csv("wikileaksout2.csv")
+dfvalcount.to_csv("wikivalout2.csv")
 df.to_csv("bigout.csv")
 # with open("wikileaksout.csv", 'w') as myfile:
 #     wr = csv.writer(myfile)
