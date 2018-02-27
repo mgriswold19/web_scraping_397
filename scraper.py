@@ -17,7 +17,7 @@ df = pd.DataFrame(columns=["emaildate","otherhuman"])
 #for i in range(33727):
 for i in range(10000):
 	ii = i + 1000
-	time.sleep(2)
+	time.sleep(0)
 	ar_url = "https://wikileaks.org/clinton-emails/emailid/" + str(ii)
 	print("querying " + ar_url)
 	try:
@@ -40,8 +40,8 @@ for i in range(10000):
 			df.loc[len(df.index)] = [emaildate,human]
 		except:
 			badcount += 1
-	except urllib.HTTPError:
-		print("HTTPError")
+	except urllib.error.HTTPError:
+		print("****HTTPError at " + ar_url)
 		# print(header)
 		# print("from:")
 		# print(emailfrom)
