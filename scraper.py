@@ -40,7 +40,7 @@ for i in range(10000):
 			df.loc[len(df.index)] = [emaildate,human]
 		except:
 			badcount += 1
-	except urllib2.HTTPError:
+	except urllib.HTTPError:
 		print("HTTPError")
 		# print(header)
 		# print("from:")
